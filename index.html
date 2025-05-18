@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LABUBU SHOP</title>
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            background-color: #ffe6f2; 
+            background-image: url('https://i.pinimg.com/564x/7b/6f/1e/7b6f1e9f26a5bac58013cca5187011a7.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .header {
+            text-align: center;
+            padding: 10px;
+            color: lightgreen;
+            font-family: Times New Roman;
+        }
+        .header h1 {
+            background-color: lightpink;
+            color: floralwhite;
+            text-shadow: 2px 2px 0px black; 
+            font-size: 2.5em;
+            font-family:  "Ubuntu", sans-serif;
+            font-style: italic;
+        }
+        #footer {
+            background-color: #ff6f61;
+            padding: 10px;
+            color: lightpink;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: honeydew;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+        .top-bar a {
+            text-decoration: none;
+            color: #ff6f61;
+            font-weight: bold;
+            padding: 10px;
+        }
+        .cart-icon {
+            position: relative;
+        }
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: red;
+            color: white;
+            border-radius: 50%;
+            padding: 4px 6px;
+            font-size: 14px;
+        }
+        .products, .blind-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .product {
+            background-color: #ffe5e5; 
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 15px;
+            transition: transform 0.2s;
+        }
+        .product:hover {
+            transform: scale(1.05);
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px; 
+        }
+        .product h3 {
+            color: #ff6f61; 
+        }
+        .button {
+            display: inline-block;
+            margin: 5px;
+            padding: 10px 15px;
+            background-color: #ff6f61; 
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #e65c50; 
+        }
+        .form-container {
+             background-color: lightsteelblue; 
+             border-radius: 15px;
+             padding: 30px;
+             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+             margin-top: 30px;
+            text-align: center; 
+        }
+
+       .form-container input[type="text"],
+       .form-container input[type="password"] {
+           width: 30%; 
+           padding: 10px;
+           background: EBFCFB; 
+           border: 1px solid darkred; 
+          border-radius: 5px;
+          margin: 10px 0; 
+         transition: border 0.3s ease; 
+        }
+
+        .form-container input[type="Submit"] {
+            width: 30%;
+            padding: 10px;
+            background: #EBFCFB;
+            border-color: #945676;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.5s ease; 
+        }
+
+        .form-container input[type="Submit"]:hover {
+          background: #D1D5DE; 
+        }
+
+       .loginform {
+        padding: 10px;
+        color: pink;
+       }
+
+     </style>
+   </head>
+ <body>
+      <!-- Header -->
+       <div class="header">
+        <h1>Labubu! Adopt your first Lababies and Anik-Anik!</h1>
+     </div>
+
+       <div class="container">
+         <div class="top-bar">
+            <div>
+                <a href="#signup">Sign Up</a>
+            </div>
+            <div class="cart-icon">
+                <a href="#cart">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMstC-X0Yv8tSwg6ist2_Au-dFm8_oRyT2uQ&s" alt="Cart" style="width: 30px; vertical-align: middle;" />
+                    <span class="cart-count" id="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+        <h1>Labu Babies! ( unsealed version )</h1>
+        <div class="products">
+            <!--BODY-->
+            <div class="product">
+                <img src="https://i.pinimg.com/564x/53/10/96/5310968f5b1a241c74a56629338a77e2.jpg" alt="Labubu">
+                <h3>Raspy</h3>
+                <p class="price">₱ 900</p>
+                <button class="button" onclick="addToCart()">Add to Cart</button>
+                <button class="button">Buy Now</button>
+            </div>
+            <div class="product">
+                <img src="https://i.pinimg.com/564x/79/e4/be/79e4bedfa6759584f2d40a3178d8567f.jpg" alt="Labubu">
+                <h3>Cowa</h3>
+                <p class="price">₱ 700</p>
+                <button class="button" onclick="addToCart()">Add to Cart</button>
+                <button class="button">Buy now</button>
+            </div>
+            <div class="product">
+                <img src="https://i.pinimg.com/564x/38/a1/ed/38a1ed283e256a077c9029dc69881b47.jpg" alt="Labubu">
+                <h3>Dada (Rare)</h3>
+                <p class="price">₱ 900</p>
+                <button class="button" onclick="addToCart()">Add to Cart</button>
+                <button class="button">Buy Now</button>
+            </div>
+            <div class="product">
+                <img src="https://i.pinimg.com/564x/02/9d/26/029d26f686cd30f0bf9d9c798e91b9ee.jpg" alt="Labubu">
+                <h3>Maki</h3>
+                <p class="price">₱ 750</p>
+                <button class="button" onclick="addToCart()">Add to Cart</button>
+                <button class="button">Buy Now</button>
+            </div>
+            <div class="product">
+                <img src="https://i.pinimg.com/564x/13/8c/b6/138cb6361dc3e84dcd5b36af2bacfd3d.jpg">
+                <h3>Bani (Limited edition)</h3>
+                <p class="price">₱ 1,900</p>
+                <button class="button" onclick="addToCart()">Add to Cart</button>
+                <button class="button">Buy Now</button>
+            </div>
+            <div class="product">
+                <img src="https://i.pinimg.com/736x/7e/bc/1f/7ebc1f0340ca504331a0dd0126d7ab3b.jpg" alt="Labubu">
+                <h3>Owa (Limited edition)</h3>
+                <p class="price">₱ 1,000</p>
+                <button class="button" onclick="addToCart()">Add to Cart</button>
+                <button class="button">Buy Now</button>
+            </div>
+            <div class="product">
+                <img src="https://i.pinimg.com/736x/d0/3d/6b/d03d6b850f6ccc6ccfce3d2f1303c6b2.jpg" alt="Labubu">
+                <h3>Sugar (Secret)</h3>
+                <p class="price">₱ 1,000</p>
+                <button class="button" onclick="addToCart()">Add to Cart</button>
+                <button class="button">Buy now</button>
+            </div>
+             <div class="product">
+                <img src="https://i.pinimg.com/564x/ff/97/66/ff97662e183fcc41f7f30a20425a9262.jpg" alt="Labubu">
+                <h3>Ada</h3>
+                <p class="price">₱ 900</p>
+                <button class="button" onclick="addToCart()">Add to Cart</button>
+                <button class="button">Buy now</button>
+            </div>
+             <div class="product">
+                <img src="https://i.pinimg.com/564x/97/8b/05/978b05b3c970ba9800bc95052af69c79.jpg" alt="Labubu">
+                <h3>Matcha</h3>
+                <p class="price">₱ 950</p>
+                <button class="button" onclick="addToCart()">Add to Cart</button>
+                <button class="button">Buy now</button>
+            </div>
+        </div>
+        
+        <h1>Labu Blind Box ( Sealed )</h1>
+        <div class="blind-box">
+            <div class="product">
+                <img src="https://i.pinimg.com/564x/31/c0/74/31c07414381d2d333bc0774c28c3226d.jpg" alt="LabuSet 1">
+                <h3>Labu Solo</h3>
+                <p class="price">₱ 900</p>
+                <button class="button" onclick="addToCart()">Add to Cart</button>
+                <button class="button">Buy Now</button>
+            </div>
+            <div class="product">
+                <img src="https://i.pinimg.com/564x/13/d4/93/13d493f8c7fca68782012d814d2cef55.jpg" alt="LabuSet 2">
+                <h3>Labu Set</h3>
+                <p class="price">₱ 5,400</p>
+                <button class="button" onclick="addToCart()">Add to Cart</button>
+                <button class="button">Buy Now</button>
+            </div>                  
+        </div>
+        </div>
+    </div>
+             <div class="form-container" id="signup">
+                <h2>Sign In</h2>
+        <input type="text" placeholder="Username" required>
+        <br/>
+        <input type="password" placeholder="Password" required>
+        <br/>
+        <input type="submit" value="Sign In"></input>
+    </form>
+        </div>
+
+
+
+    <div id="footer">
+        <p>&copy; 2024 LABUBU, Come and Shop with us</p>
+    </div>
+
+    <script>
+        let cartCount = 0;
+
+        function addToCart() {
+            cartCount++;
+            document.getElementById('cart-count').innerText = cartCount;
+        }
+    </script>
+</body>
+</html>
